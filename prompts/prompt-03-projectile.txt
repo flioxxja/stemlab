@@ -1,0 +1,14 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/components/ProjectileLab.tsx` para STEMLab (Next.js 16, TypeScript estricto, React 19). Devuelve únicamente un bloque de código tsx, sin explicaciones.
+
+Es un laboratorio interactivo de tiro parabólico con canvas 2D. Debe empezar con "use client"; y exportar por defecto el componente ProjectileLab.
+
+Requisitos:
+- Canvas de 900x420 (responsive: width 100%, height auto vía style; usa ref y dibuja con devicePixelRatio para nitidez).
+- Controles con sliders (clases .controls y .control-row de globals.css): velocidad inicial v0 (5–60 m/s, default 32), ángulo (5–85°, default 45), gravedad g (1–25 m/s², default 9.8) con presets rápidos: Luna 1.6, Marte 3.7, Tierra 9.8, Júpiter 24.8 (botones .chip).
+- Botones: "Lanzar" (.btn-primary) y "Reiniciar" (.btn-ghost).
+- Física real: x = v0·cos(θ)·t; y = v0·sin(θ)·t − ½·g·t². Escala automática para que la trayectoria quepa en el canvas (calcula alcance y altura máxima teóricos y ajusta la escala).
+- Dibujo: rejilla de fondo sutil, suelo, cañón simple en el origen, trayectoria punteada prevista (antes de lanzar, en gris), trayectoria recorrida en cyan con estela, proyectil como círculo con glow. Marcas de distancia cada 10 m en el eje X.
+- Animación con requestAnimationFrame; al tocar el suelo se detiene y marca el punto de impacto.
+- Panel de datos en vivo (clase .stat en fila): tiempo, altura actual, velocidad actual; al finalizar: alcance total, altura máxima, tiempo de vuelo.
+- Caja .formula con las fórmulas usadas y los valores sustituidos (alcance = v0²·sin(2θ)/g, etc.).
+- Sin librerías externas. Limpia el rAF al desmontar. TypeScript estricto sin errores.

@@ -1,0 +1,9 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/components/Quiz.tsx` para STEMLab (Next.js 16, TypeScript estricto, React 19). Devuelve únicamente un bloque de código tsx, sin explicaciones.
+
+Es un sistema de retos STEM con puntaje. Debe empezar con "use client"; y exportar por defecto el componente Quiz.
+
+Requisitos:
+- Banco de 12 preguntas en el mismo archivo (const QUESTIONS): 4 de cinemática/tiro parabólico, 4 de péndulo/oscilaciones, 4 de electricidad/Ley de Ohm. Cada pregunta: { topic: string; question: string; options: string[4]; answer: number; explanation: string } en español, nivel secundaria/preparatoria, con números concretos (ej. "Un proyectil sale a 20 m/s con 30°. ¿Cuál es su alcance en la Tierra? (g=9.8)").
+- Flujo: pantalla de inicio con botón "Empezar retos" (.btn-primary) y mejor puntaje guardado en localStorage (clave "stemlab-best"). Durante el quiz: barra de progreso (.progress-bar), "Pregunta X de 12", chip con el tema, pregunta en grande, 4 opciones como botones .quiz-option. Al responder: marca correcta en verde e incorrecta en rojo (clases .correct/.wrong), muestra la explicación y botón "Siguiente". Puntaje: +100 por acierto, +20 extra si responde en menos de 10 segundos (temporizador visible por pregunta, 20 s máx; si se acaba, cuenta como fallo).
+- Pantalla final: puntaje total, aciertos, mensaje según desempeño (≥80% "¡Nivel laboratorio pro!", ≥50% "Buen experimento, sigue practicando", si no "Vuelve a los laboratorios y reintenta"), botón "Jugar de nuevo".
+- Sin librerías externas. TypeScript estricto sin errores. Maneja el temporizador con useEffect y límpialo bien.

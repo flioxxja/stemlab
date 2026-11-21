@@ -1,0 +1,14 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/app/globals.css` para una app Next.js llamada STEMLab (laboratorio interactivo de física y matemáticas para estudiantes). Devuelve únicamente un bloque de código CSS, sin explicaciones.
+
+Objetivo: sistema de diseño completo, nivel premium oscuro (dark), listo para que otros componentes lo usen con clases utilitarias propias (sin Tailwind, CSS puro).
+
+Requisitos:
+- Variables CSS en :root: fondo #070B16, superficies #0D1424 / #111B31, bordes rgba(148,184,255,.14), texto #E8ECF4, texto suave #94A3B8, acentos: cyan #22D3EE, violeta #A78BFA, verde #34D399, ámbar #FBBF24, rosa #F472B6. Radios 12/16/24px. Sombras suaves.
+- Reset, tipografía system-ui, scrollbar estilizada, selección de texto.
+- Clases: .container (max-width 1200px, padding lateral), .btn, .btn-primary (gradiente cyan→violeta), .btn-ghost, .card (superficie con borde y radio 16, hover con elevación), .chip, .badge, .section (padding vertical 96px), .section-head (kicker + título + subtítulo), .kicker (mono, uppercase, tracking), .grid-3, .grid-2 (responsive con media queries), .lab-shell (contenedor de laboratorio con cabecera y cuerpo en grid 2 columnas que colapsa en móvil), .controls (panel de sliders), .control-row (label + valor mono), input[type=range] estilizado (thumb cyan), .stat (número grande + label), .formula (caja mono con fondo suave), .quiz-option (botón de opción con estados .correct/.wrong), .progress-bar, .nav (sticky con blur), .footer.
+- Animaciones: @keyframes float, pulse-glow, fade-up; clase .reveal para entrada.
+- Fondo decorativo: .bg-grid (rejilla sutil con linear-gradients) y .bg-glow (radial gradients cyan/violeta muy suaves).
+- Responsive: breakpoints 900px y 640px.
+- Accesibilidad: focus-visible con outline cyan, prefers-reduced-motion.
+
+Solo CSS válido, sin imports externos.

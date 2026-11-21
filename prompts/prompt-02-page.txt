@@ -1,0 +1,19 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/app/page.tsx` para STEMLab, una app Next.js 16 (App Router, TypeScript estricto). Devuelve únicamente un bloque de código tsx, sin explicaciones.
+
+Contexto: STEMLab es un laboratorio interactivo de física y matemáticas para estudiantes. Ya existe `src/app/globals.css` con estas clases: .container, .btn, .btn-primary, .btn-ghost, .card, .chip, .badge, .section, .section-head, .kicker, .grid-3, .grid-2, .lab-shell, .controls, .control-row, .stat, .formula, .quiz-option, .progress-bar, .nav, .footer, .bg-grid, .bg-glow, .reveal. Úsalas; no uses Tailwind ni librerías externas.
+
+La página importa estos componentes (ya existen en el proyecto, impórtalos así):
+- `import ProjectileLab from "@/components/ProjectileLab";`
+- `import PendulumLab from "@/components/PendulumLab";`
+- `import OhmLab from "@/components/OhmLab";`
+- `import Quiz from "@/components/Quiz";`
+
+Estructura de la página (server component, sin "use client"):
+1. Nav sticky (.nav): logo "STEMLab" con un punto de acento, enlaces ancla: Laboratorios (#labs), Retos (#retos), Cómo funciona (#como). Botón .btn-primary "Empezar" → #labs.
+2. Hero (con .bg-grid y .bg-glow): kicker "LABORATORIO STEM INTERACTIVO", título gigante en 2 líneas: "Aprende física" / "tocando las variables." con la segunda línea en gradiente cyan→violeta (estilo inline con backgroundClip). Subtítulo: "Simulaciones en vivo, retos con puntaje y explicaciones paso a paso. Sin cuentas, sin instalar nada: abre y experimenta." Dos botones: "Entrar al laboratorio" (#labs) y "Ver retos" (#retos, ghost). Fila de stats: 3 simulaciones en vivo · 12 retos · 100% gratis.
+3. Sección #labs (.section): section-head con kicker "LABORATORIOS", título "Experimenta, no memorices", subtítulo breve. Luego los tres laboratorios, cada uno dentro de .lab-shell con su cabecera (badge con el tema: "Cinemática", "Oscilaciones", "Electricidad" + título + descripción de 1 línea) y el componente correspondiente.
+4. Sección #retos: section-head "RETOS" / "Pon a prueba lo que aprendiste" y el componente <Quiz /> dentro de .card.
+5. Sección #como: section-head "CÓMO FUNCIONA" y .grid-3 con 3 cards: "1 · Mueve las variables" (sliders en vivo), "2 · Observa el fenómeno" (canvas en tiempo real con datos), "3 · Responde y gana puntos" (retos con explicación). Cada card con un número grande en acento y texto breve.
+6. Footer (.footer): "STEMLab — Hecho para STEM2Connect AI · Aprende STEM experimentando" y nota "Sin cuentas. Sin costos. Solo curiosidad."
+
+Textos en español neutro. HTML semántico (header, main, section, footer). Sin imágenes externas; usa emojis mínimos o ninguno. El archivo debe compilar con TypeScript estricto.

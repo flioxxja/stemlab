@@ -1,0 +1,13 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/components/OhmLab.tsx` para STEMLab (Next.js 16, TypeScript estricto, React 19). Devuelve únicamente un bloque de código tsx, sin explicaciones.
+
+Es un laboratorio interactivo de la Ley de Ohm con un circuito dibujado en canvas 2D (o SVG dentro del componente; elige canvas). Debe empezar con "use client"; y exportar por defecto el componente OhmLab.
+
+Requisitos:
+- Canvas de 900x360 (responsive, devicePixelRatio).
+- Controles (.controls / .control-row): voltaje V (1–24 V, default 9), resistencia R (1–100 Ω, default 10), y selector de modo: "Serie" o "Paralelo" con dos resistencias R1 y R2 (sliders separados que aparecen según el modo).
+- Cálculos: I = V/R (serie: Rtotal = R1+R2; paralelo: 1/Rtotal = 1/R1+1/R2), potencia P = V·I. Muestra corriente en A y mA.
+- Dibujo del circuito: batería (con +/− y voltaje), cables en rectángulo, resistencia(s) como zigzag, bombillo que brilla según la potencia (glow radial proporcional a P, con límite), electrones animados circulando por el cable con velocidad proporcional a la corriente (puntos cyan en movimiento con rAF).
+- Datos (.stat): corriente total, resistencia equivalente, potencia, brillo (Bajo/Medio/Alto según P).
+- Caja .formula: V = I·R con valores sustituidos; en serie/paralelo muestra la fórmula de Rtotal.
+- Aviso de seguridad visual si P > 20 W: chip ámbar "¡Mucha potencia! El bombillo se quemaría".
+- Sin librerías externas. Limpia el rAF al desmontar. TypeScript estricto sin errores.

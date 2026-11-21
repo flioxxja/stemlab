@@ -1,0 +1,13 @@
+Eres un ingeniero frontend senior. Escribe SOLO el código completo del archivo `src/components/PendulumLab.tsx` para STEMLab (Next.js 16, TypeScript estricto, React 19). Devuelve únicamente un bloque de código tsx, sin explicaciones.
+
+Es un laboratorio interactivo de péndulo simple con canvas 2D. Debe empezar con "use client"; y exportar por defecto el componente PendulumLab.
+
+Requisitos:
+- Canvas de 900x420 (responsive, devicePixelRatio para nitidez).
+- Controles (clases .controls y .control-row): longitud L (0.3–3 m, default 1.5), masa m (0.2–5 kg, default 1), gravedad g (1–25 m/s², default 9.8) con presets Luna/Marte/Tierra/Júpiter (.chip), ángulo inicial (5–60°, default 30).
+- Botones "Soltar" (.btn-primary) y "Pausar/Reanudar" (.btn-ghost).
+- Física: integración numérica del péndulo (θ'' = −(g/L)·sin θ) con paso fijo; periodo teórico T = 2π·√(L/g) y periodo medido contando cruces por el punto más bajo.
+- Dibujo: soporte superior, cuerda, masa como círculo con radio según la masa, arco de trayectoria, estela suave de la masa, vectores opcionales (velocidad en verde, aceleración tangencial en ámbar) con checkbox "Mostrar vectores".
+- Datos en vivo (.stat): periodo teórico, periodo medido, frecuencia, energía total (aprox. m·g·h máx).
+- Caja .formula: T = 2π·√(L/g) con valores sustituidos y nota "la masa no cambia el periodo".
+- Sin librerías externas. Limpia el rAF al desmontar. TypeScript estricto sin errores.
